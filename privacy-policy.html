@@ -190,6 +190,7 @@
 
     <!-- Header -->
     <div class="header">
+      <div id="cqm-lang-switcher" style="position:absolute;top:64px;right:24px;z-index:10"></div>
       <div class="logo-wrap">
         <svg width="34" height="34" viewBox="0 0 32 32" fill="none">
           <rect width="32" height="32" rx="7" fill="#0a0a18"/>
@@ -208,40 +209,40 @@
       </div>
       <div class="header-text">
         <h1>Claude <span>Quota</span> Monitor</h1>
-        <p>Privacy Policy &mdash; Last updated: April 19, 2026</p>
+        <p data-i18n="pp_subtitle">Privacy Policy &mdash; Last updated: April 19, 2026</p>
       </div>
     </div>
 
     <!-- Overview -->
     <div class="section">
-      <h2>Overview</h2>
-      <p>Claude Quota Monitor is a browser extension that displays your Claude.ai usage quota directly in the browser toolbar.</p>
-      <div class="highlight">
+      <h2 data-i18n="pp_s1_title">Overview</h2>
+      <p data-i18n="pp_s1_p">Claude Quota Monitor is a browser extension that displays your Claude.ai usage quota directly in the browser toolbar.</p>
+      <div class="highlight" data-i18n="pp_s1_h1">
         🔒 We do not collect, transmit, or store any personal data on external servers. Everything stays on your device.
       </div>
-      <div class="highlight" style="margin-top:10px">
+      <div class="highlight" style="margin-top:10px" data-i18n-html="pp_s1_h2_html">
         🔓 This extension is <strong>open source</strong>. You can inspect every line of code at <a href="https://github.com/claudequotamonitor/claude-quota-monitor" target="_blank" style="color:var(--purple)">github.com/claudequotamonitor/claude-quota-monitor</a> and verify our privacy practices yourself.
       </div>
     </div>
 
     <!-- Data collected -->
     <div class="section">
-      <h2>What data is accessed</h2>
-      <p>The extension reads the following data exclusively from Claude.ai's own API, using your existing browser session:</p>
-      <ul>
+      <h2 data-i18n="pp_s2_title">What data is accessed</h2>
+      <p data-i18n="pp_s2_p">The extension reads the following data exclusively from Claude.ai's own API, using your existing browser session:</p>
+      <ul data-i18n-html="pp_s2_items_html">
         <li>Your organization ID (used to query the usage API)</li>
         <li>Session quota usage percentage and reset time (5-hour window)</li>
         <li>Weekly quota usage percentage and reset time (7-day window)</li>
         <li>Claude Design weekly quota usage and reset time</li>
         <li>Your account plan type (e.g. Pro)</li>
       </ul>
-      <p style="margin-top:12px">This data is stored locally on your device using the browser's built-in <code style="font-size:12px;background:#1a1a2e;padding:1px 6px;border-radius:4px;color:#a78bfa">chrome.storage.local</code> API and is never sent anywhere else.</p>
+      <p style="margin-top:12px" data-i18n-html="pp_s2_note_html">This data is stored locally on your device using the browser's built-in <code style="font-size:12px;background:#1a1a2e;padding:1px 6px;border-radius:4px;color:#a78bfa">chrome.storage.local</code> API and is never sent anywhere else.</p>
     </div>
 
     <!-- What we don't do -->
     <div class="section">
-      <h2>What we do not do</h2>
-      <ul>
+      <h2 data-i18n="pp_s3_title">What we do not do</h2>
+      <ul data-i18n-html="pp_s3_items_html">
         <li>We do not collect any personally identifiable information</li>
         <li>We do not transmit any data to external servers</li>
         <li>We do not use analytics, tracking pixels, or telemetry</li>
@@ -253,8 +254,8 @@
 
     <!-- Permissions -->
     <div class="section">
-      <h2>Permissions explained</h2>
-      <ul>
+      <h2 data-i18n="pp_s4_title">Permissions explained</h2>
+      <ul data-i18n-html="pp_s4_items_html">
         <li><strong style="color:#e8e8f0">storage</strong> — saves quota data locally on your device</li>
         <li><strong style="color:#e8e8f0">tabs</strong> — opens claude.ai when you click the "View quota" button</li>
         <li><strong style="color:#e8e8f0">alarms</strong> — schedules background refresh every 10 minutes</li>
@@ -264,37 +265,38 @@
 
     <!-- Third parties -->
     <div class="section">
-      <h2>Third-party services</h2>
-      <p>The extension does not integrate with any third-party services, SDKs, or APIs other than Claude.ai's own usage endpoint, which you are already authenticated with.</p>
-      <p>The donation button links to <a href="https://ko-fi.com" target="_blank" rel="noopener">Ko-fi</a>. Visiting that page is subject to Ko-fi's own privacy policy.</p>
+      <h2 data-i18n="pp_s5_title">Third-party services</h2>
+      <p data-i18n="pp_s5_p1">The extension does not integrate with any third-party services, SDKs, or APIs other than Claude.ai's own usage endpoint, which you are already authenticated with.</p>
+      <p data-i18n-html="pp_s5_p2_html">The donation button links to <a href="https://ko-fi.com" target="_blank" rel="noopener">Ko-fi</a>. Visiting that page is subject to Ko-fi's own privacy policy.</p>
     </div>
 
     <!-- Children -->
     <div class="section">
-      <h2>Children's privacy</h2>
-      <p>This extension is not directed at children under the age of 13. We do not knowingly collect any information from children.</p>
+      <h2 data-i18n="pp_s6_title">Children's privacy</h2>
+      <p data-i18n="pp_s6_p">This extension is not directed at children under the age of 13. We do not knowingly collect any information from children.</p>
     </div>
 
     <!-- Changes -->
     <div class="section">
-      <h2>Changes to this policy</h2>
-      <p>If we make material changes to this privacy policy, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically.</p>
+      <h2 data-i18n="pp_s7_title">Changes to this policy</h2>
+      <p data-i18n="pp_s7_p">If we make material changes to this privacy policy, we will update the "Last updated" date at the top of this page. We encourage you to review this page periodically.</p>
     </div>
 
     <!-- Contact -->
     <div class="section">
-      <h2>Contact</h2>
-      <p>If you have any questions about this privacy policy, please contact us at:</p>
+      <h2 data-i18n="pp_s8_title">Contact</h2>
+      <p data-i18n="pp_s8_p">If you have any questions about this privacy policy, please contact us at:</p>
       <p><a href="mailto:claudequotamonitor@gmail.com">claudequotamonitor@gmail.com</a></p>
-      <p style="margin-top:8px">Extension page: <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm" target="_blank" rel="noopener">Chrome Web Store</a></p>
+      <p style="margin-top:8px" data-i18n-html="pp_s8_store_html">Extension page: <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm" target="_blank" rel="noopener">Chrome Web Store</a></p>
     </div>
 
     <p class="footer">
-      &copy; 2026 The Claude Quota Monitor team &mdash;
-      <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm" target="_blank" rel="noopener">Chrome Web Store</a>
+      <span data-i18n-html="pp_footer_html">&copy; 2026 The Claude Quota Monitor team &mdash;
+      <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm" target="_blank" rel="noopener">Chrome Web Store</a></span>
     </p>
 
   </main>
 
+<script src="i18n.js"></script>
 </body>
 </html>
