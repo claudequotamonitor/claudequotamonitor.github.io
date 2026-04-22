@@ -55,7 +55,6 @@
       overflow-x: hidden;
     }
 
-    /* dot grid */
     body::before {
       content: '';
       position: fixed;
@@ -67,7 +66,6 @@
       z-index: 0;
     }
 
-    /* glows */
     .glow {
       position: fixed;
       border-radius: 50%;
@@ -105,11 +103,7 @@
       gap: 10px;
       text-decoration: none;
     }
-    .nav-logo span {
-      font-size: 15px;
-      font-weight: 700;
-      color: #fff;
-    }
+    .nav-logo span { font-size: 15px; font-weight: 700; color: #fff; }
     .nav-logo span em {
       font-style: normal;
       background: linear-gradient(90deg, var(--purple), var(--purple2));
@@ -139,7 +133,6 @@
       padding: 56px 24px 80px;
     }
 
-    /* ── PAGE HEADER ── */
     .page-header {
       display: flex;
       align-items: flex-start;
@@ -161,47 +154,63 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .page-header-left p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
+    .page-header-left p { font-size: 14px; color: var(--muted); margin-top: 6px; }
 
     #cqm-lang-switcher { flex-shrink: 0; }
 
-    /* ── TIMELINE ── */
-    .timeline {
+    /* ── LOADING / ERROR ── */
+    .cl-loading {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 40px 0;
     }
 
-    /* ── VERSION CARD ── */
+    .cl-spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(167,139,250,.2);
+      border-top-color: var(--purple);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .cl-error {
+      background: var(--surface);
+      border: 1px solid rgba(251,146,60,.2);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      color: #b0b0c8;
+      font-size: 14px;
+    }
+    .cl-error a { color: var(--purple); }
+
+    /* ── TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; }
+
     .version-card {
       position: relative;
       padding-left: 32px;
       padding-bottom: 40px;
     }
 
-    /* vertical line */
     .version-card::before {
       content: '';
       position: absolute;
-      left: 9px;
-      top: 10px;
-      bottom: 0;
+      left: 9px; top: 10px; bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, rgba(167,139,250,.3), transparent);
     }
     .version-card:last-child::before { display: none; }
 
-    /* dot */
     .version-card::after {
       content: '';
       position: absolute;
-      left: 4px;
-      top: 7px;
-      width: 12px;
-      height: 12px;
+      left: 4px; top: 7px;
+      width: 12px; height: 12px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--purple), var(--purple2));
       box-shadow: 0 0 10px rgba(167,139,250,.5);
@@ -215,12 +224,7 @@
       flex-wrap: wrap;
     }
 
-    .version-badge {
-      font-size: 15px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.3px;
-    }
+    .version-badge { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
 
     .version-date {
       font-size: 12px;
@@ -243,7 +247,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* inner card box */
     .version-body {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -253,7 +256,6 @@
     }
     .version-body:hover { border-color: rgba(167,139,250,.3); }
 
-    /* ── CATEGORY ── */
     .category { margin-bottom: 16px; }
     .category:last-child { margin-bottom: 0; }
 
@@ -270,17 +272,12 @@
       margin-bottom: 8px;
     }
 
-    .cat-added       { color: var(--green);  background: rgba(52,211,153,.1);  border: 1px solid rgba(52,211,153,.2); }
-    .cat-improved    { color: var(--blue);   background: rgba(96,165,250,.1);  border: 1px solid rgba(96,165,250,.2); }
-    .cat-fixed       { color: var(--orange); background: rgba(251,146,60,.1);  border: 1px solid rgba(251,146,60,.2); }
-    .cat-localization{ color: var(--purple); background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); }
+    .cat-added        { color: var(--green);  background: rgba(52,211,153,.1);  border: 1px solid rgba(52,211,153,.2); }
+    .cat-improved     { color: var(--blue);   background: rgba(96,165,250,.1);  border: 1px solid rgba(96,165,250,.2); }
+    .cat-fixed        { color: var(--orange); background: rgba(251,146,60,.1);  border: 1px solid rgba(251,146,60,.2); }
+    .cat-localization { color: var(--purple); background: rgba(167,139,250,.1); border: 1px solid rgba(167,139,250,.2); }
 
-    .category ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .category ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 
     .category ul li {
       font-size: 13.5px;
@@ -289,15 +286,7 @@
       position: relative;
       line-height: 1.55;
     }
-
-    .category ul li::before {
-      content: '›';
-      position: absolute;
-      left: 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
+    .category ul li::before { content: '›'; position: absolute; left: 0; color: var(--muted); font-weight: 700; }
     .category ul li strong { color: #e0e0f0; font-weight: 600; }
     .category ul li code {
       font-size: 12px;
@@ -306,6 +295,7 @@
       border-radius: 4px;
       color: var(--purple);
     }
+    .category ul li em { font-style: italic; color: #c4b5fd; }
 
     /* ── FOOTER ── */
     footer {
@@ -320,24 +310,11 @@
       gap: 16px;
     }
 
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color .2s;
-    }
+    .footer-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--purple); }
-
     .footer-copy { font-size: 12px; color: #333; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 14px 20px; }
       .page { padding: 40px 16px 60px; }
@@ -351,7 +328,6 @@
   <div class="glow glow-tl"></div>
   <div class="glow glow-br"></div>
 
-  <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
@@ -376,7 +352,6 @@
     </a>
   </nav>
 
-  <!-- MAIN -->
   <main class="page">
 
     <div class="page-header">
@@ -387,213 +362,21 @@
       <div id="cqm-lang-switcher"></div>
     </div>
 
-    <div class="timeline">
+    <div class="cl-loading" id="cl-loading">
+      <div class="cl-spinner"></div>
+      <span>Loading changelog…</span>
+    </div>
 
-      <!-- v1.5 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.5</span>
-          <span class="version-date">Apr 19, 2026</span>
-          <span class="version-latest" data-i18n="cl_latest">Latest</span>
-        </div>
-        <div class="version-body">
+    <div class="cl-error" id="cl-error" style="display:none">
+      Could not load the changelog. You can read it directly on
+      <a href="https://github.com/claudequotamonitor/claude-quota-monitor/blob/main/CHANGELOG.md"
+         target="_blank" rel="noopener">GitHub</a>.
+    </div>
 
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li><strong>Claude Design quota</strong> — the weekly section now shows two categories: <em>All models</em> and <em>Claude Design</em>, each with usage percentage and reset time.</li>
-              <li><strong>Onboarding page</strong> — shown automatically on first install, guiding users through setup in 4 steps (including browser-specific instructions to pin the extension).</li>
-              <li><strong>Automated test suite</strong> — 25 tests covering popup rendering, bar colors, i18n strings, and time formatting (<code>npm test</code>).</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-improved" data-i18n="cl_improved">↑ Improved</div>
-            <ul>
-              <li>Extension icon completely redrawn at high resolution (vectorially rendered at 8×, 4×, and 2× scale for 16px, 48px, and 128px sizes).</li>
-              <li>Icon arc rotation corrected; track arc contrast improved.</li>
-              <li>Popup title updated to full name: <strong>Claude Quota Monitor</strong>.</li>
-              <li>All marketing assets (X banner, YouTube banner, thumbnail) updated with corrected icon.</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-fixed" data-i18n="cl_fixed">✗ Fixed</div>
-            <ul>
-              <li>Extension icon was missing from the <code>chrome://extensions/</code> list (missing top-level <code>icons</code> field in <code>manifest.json</code>).</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-localization" data-i18n="cl_localization">◎ Localization</div>
-            <ul>
-              <li>Onboarding page fully translated in all 10 supported languages.</li>
-              <li>New strings added: weekly category labels, pill labels, step 4 pin instructions (browser-aware: Chrome, Brave, Edge, Arc).</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.4.1 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.4.1</span>
-          <span class="version-date">Apr 18, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li><strong>Onboarding page</strong> — shown automatically on first install, guiding users through setup in 4 steps with browser-specific instructions to pin the extension (Chrome, Brave, Edge, Arc).</li>
-              <li>Onboarding page translated in all 10 supported languages.</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-fixed" data-i18n="cl_fixed">✗ Fixed</div>
-            <ul>
-              <li>Badge not restored correctly after browser restart in some cases.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.4 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.4</span>
-          <span class="version-date">Mar 18, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li>Initial public release on the Chrome Web Store.</li>
-              <li>Session quota tracking (5-hour window) with color-coded toolbar badge (green → orange at 70% → red at 90%).</li>
-              <li>Weekly quota tracking (7-day window) with reset timer.</li>
-              <li>Auto background refresh every 10 minutes via <code>chrome.alarms</code>.</li>
-              <li>MutationObserver-based refresh triggered after each Claude response.</li>
-              <li>Donation link (Ko-fi) in popup footer.</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-localization" data-i18n="cl_localization">◎ Localization</div>
-            <ul>
-              <li>Full UI in 10 languages: English, Portuguese (BR), Spanish, French, Arabic, Bengali, Hindi, Indonesian, Russian, Chinese (Simplified).</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.3 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.3</span>
-          <span class="version-date">Apr 17, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li>Internationalization (i18n) infrastructure using <code>_locales/</code> and <code>chrome.i18n</code>.</li>
-              <li>Support for 10 languages: English, Portuguese (BR), Spanish, French, Arabic, Bengali, Hindi, Indonesian, Russian, Chinese (Simplified).</li>
-              <li>RTL layout support for Arabic.</li>
-              <li>Store listing descriptions written in all 10 languages.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.2 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.2</span>
-          <span class="version-date">Apr 17, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li>Extension icons at all required sizes (16px, 48px, 128px) rendered from SVG source.</li>
-              <li>Toolbar badge showing current session usage percentage.</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-improved" data-i18n="cl_improved">↑ Improved</div>
-            <ul>
-              <li>Popup UI redesigned with inline SVG logo, removing any external asset dependencies.</li>
-              <li>Visual consistency across light and dark browser themes.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.1 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.1</span>
-          <span class="version-date">Apr 16, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li><code>MutationObserver</code> in content script to detect when Claude finishes a response and trigger an automatic data refresh (~2 seconds after each reply).</li>
-              <li>Retry logic with exponential backoff (3s → 8s → 20s → 60s) for API calls that fail during login or page load.</li>
-              <li>Auto-fetch when popup is opened and no cached data is available yet.</li>
-            </ul>
-          </div>
-
-          <div class="category">
-            <div class="category-label cat-improved" data-i18n="cl_improved">↑ Improved</div>
-            <ul>
-              <li>Empty state handling in popup when extension is freshly installed.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- v1.0 -->
-      <div class="version-card">
-        <div class="version-meta">
-          <span class="version-badge">v1.0</span>
-          <span class="version-date">Apr 15, 2026</span>
-        </div>
-        <div class="version-body">
-
-          <div class="category">
-            <div class="category-label cat-added" data-i18n="cl_added">✦ Added</div>
-            <ul>
-              <li>Initial working version.</li>
-              <li>Content script intercepts fetch requests to <code>claude.ai/api/organizations/{uuid}/usage</code> and captures session and weekly quota data.</li>
-              <li>Data stored locally via <code>chrome.storage.local</code>.</li>
-              <li>Background service worker with <code>chrome.alarms</code> polling every 10 minutes.</li>
-              <li>Popup displaying session usage percentage and reset time.</li>
-              <li>CSP bypass via <code>chrome.scripting.executeScript</code> with <code>world: 'MAIN'</code>.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-    </div><!-- /.timeline -->
+    <div class="timeline" id="cl-timeline" style="display:none"></div>
 
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="/" data-i18n="footer_home">Home</a>
@@ -606,5 +389,127 @@
   </footer>
 
 <script src="i18n.js"></script>
+<script>
+  /* ── CONFIG ─────────────────────────────────────────────────── */
+  const CL_RAW_URL =
+    'https://raw.githubusercontent.com/claudequotamonitor/claude-quota-monitor/main/CHANGELOG.md';
+
+  const CL_CAT = {
+    'added':        { key: 'cl_added',        cls: 'cat-added',        fallback: '✦ Added' },
+    'improved':     { key: 'cl_improved',     cls: 'cat-improved',     fallback: '↑ Improved' },
+    'fixed':        { key: 'cl_fixed',        cls: 'cat-fixed',        fallback: '✗ Fixed' },
+    'localization': { key: 'cl_localization', cls: 'cat-localization', fallback: '◎ Localization' },
+  };
+
+  /* ── HELPERS ─────────────────────────────────────────────────── */
+  function clFormatDate(iso) {
+    const [y, m, d] = iso.split('-').map(Number);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${months[m - 1]} ${d}, ${y}`;
+  }
+
+  function clInline(text) {
+    return text
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  }
+
+  /* ── PARSER ──────────────────────────────────────────────────── */
+  function clParse(md) {
+    const versions = [];
+    const blocks = md.split(/^## /m).filter(b => b.trimStart().startsWith('['));
+
+    for (const block of blocks) {
+      const lines = block.split('\n');
+      const m = lines[0].match(/^\[([^\]]+)\]\s*(?:—|-)\s*(\d{4}-\d{2}-\d{2})/);
+      if (!m) continue;
+
+      const version = m[1];
+      const date    = m[2];
+      const cats    = [];
+      let curName   = null;
+      let curItems  = [];
+
+      for (const line of lines.slice(1)) {
+        const catM = line.match(/^### (.+)/);
+        if (catM) {
+          if (curName) cats.push({ name: curName, items: curItems });
+          curName  = catM[1].trim().toLowerCase();
+          curItems = [];
+        } else if (line.startsWith('- ') && curName) {
+          curItems.push(line.slice(2).trim());
+        }
+      }
+      if (curName) cats.push({ name: curName, items: curItems });
+
+      versions.push({ version, date, cats });
+    }
+    return versions;
+  }
+
+  /* ── RENDERER ────────────────────────────────────────────────── */
+  function clBuildCard(v, isLatest) {
+    const catsHtml = v.cats.map(cat => {
+      const meta = CL_CAT[cat.name] || { key: '', cls: 'cat-added', fallback: cat.name };
+      const items = cat.items
+        .map(item => `<li>${clInline(item)}</li>`)
+        .join('');
+      const i18nAttr = meta.key ? ` data-i18n="${meta.key}"` : '';
+      return `
+        <div class="category">
+          <div class="category-label ${meta.cls}"${i18nAttr}>${meta.fallback}</div>
+          <ul>${items}</ul>
+        </div>`;
+    }).join('');
+
+    const latestBadge = isLatest
+      ? `<span class="version-latest" data-i18n="cl_latest">Latest</span>`
+      : '';
+
+    return `
+      <div class="version-card">
+        <div class="version-meta">
+          <span class="version-badge">v${v.version}</span>
+          <span class="version-date">${clFormatDate(v.date)}</span>
+          ${latestBadge}
+        </div>
+        <div class="version-body">${catsHtml}</div>
+      </div>`;
+  }
+
+  /* ── INIT ────────────────────────────────────────────────────── */
+  async function clInit() {
+    const loading  = document.getElementById('cl-loading');
+    const error    = document.getElementById('cl-error');
+    const timeline = document.getElementById('cl-timeline');
+
+    try {
+      const res = await fetch(CL_RAW_URL);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const md       = await res.text();
+      const versions = clParse(md);
+      if (!versions.length) throw new Error('empty');
+
+      timeline.innerHTML = versions
+        .map((v, i) => clBuildCard(v, i === 0))
+        .join('');
+
+      loading.style.display  = 'none';
+      timeline.style.display = 'flex';
+
+      // Re-apply translations to newly injected [data-i18n] elements
+      const lang = localStorage.getItem('cqm_lang') || cqmDetectLang();
+      cqmApplyLang(lang);
+
+    } catch (_) {
+      loading.style.display = 'none';
+      error.style.display   = 'block';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', clInit);
+</script>
 </body>
 </html>
