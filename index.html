@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://claudequotamonitor.github.io/" />
   <meta property="og:title" content="Claude Quota Monitor — Free Chrome Extension to Track Claude.ai Usage" />
   <meta property="og:description" content="Free, open source Chrome extension that shows your Claude.ai session and weekly quota directly in the browser toolbar. No setup required." />
-  <meta property="og:image" content="https://claudequotamonitor.github.io/screenshots/store-en.png" />
+  <meta property="og:image" content="https://claudequotamonitor.github.io/screenshots/store-en-dark.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="800" />
   <meta property="og:site_name" content="Claude Quota Monitor" />
@@ -29,7 +29,7 @@
   <meta name="twitter:creator" content="@claudequota" />
   <meta name="twitter:title" content="Claude Quota Monitor — Free Chrome Extension to Track Claude.ai Usage" />
   <meta name="twitter:description" content="Free, open source Chrome extension that shows your Claude.ai session and weekly quota directly in the browser toolbar. No setup required." />
-  <meta name="twitter:image" content="https://claudequotamonitor.github.io/screenshots/store-en.png" />
+  <meta name="twitter:image" content="https://claudequotamonitor.github.io/screenshots/store-en-dark.png" />
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -176,7 +176,7 @@
 
     .hero {
       text-align: center;
-      padding: 100px 24px 80px;
+      padding: 100px 24px 40px;
       max-width: 780px;
       margin: 0 auto;
       position: relative;
@@ -274,9 +274,26 @@
       padding: 4px 12px;
     }
 
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .hero-badges a {
+      display: inline-flex;
+      align-items: center;
+      opacity: .85;
+      transition: opacity .2s;
+    }
+    .hero-badges a:hover { opacity: 1; }
+    .hero-badges img { height: 20px; display: block; }
+
     /* ── FEATURES ── */
     .features {
-      padding: 80px 40px;
+      padding: 48px 40px;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -513,8 +530,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       nav { padding: 14px 20px; }
-      .hero { padding: 70px 20px 60px; }
-      .features, .preview { padding: 60px 20px; }
+      .hero { padding: 70px 20px 28px; }
+      .features, .preview { padding: 40px 20px; }
       footer { padding: 32px 20px; }
       .carousel-btn { display: none; }
     }
@@ -589,6 +606,24 @@
       <span class="pill" data-i18n="pill_langs">10 languages</span>
       <span class="pill" data-i18n="pill_free">Free</span>
       <span class="pill" data-i18n="pill_opensource">Open source</span>
+    </div>
+
+    <div class="hero-badges">
+      <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm"
+         target="_blank" rel="noopener" aria-label="Chrome Web Store">
+        <img src="https://img.shields.io/chrome-web-store/v/gpeogkjjkpmdjgggeaegmnmlmikgkjjm?label=Chrome%20Web%20Store&color=a78bfa"
+             alt="Chrome Web Store version" />
+      </a>
+      <a href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm"
+         target="_blank" rel="noopener" aria-label="Chrome Web Store users">
+        <img src="https://img.shields.io/chrome-web-store/users/gpeogkjjkpmdjgggeaegmnmlmikgkjjm?label=users&color=a78bfa"
+             alt="Chrome Web Store users" />
+      </a>
+      <a href="https://github.com/claudequotamonitor/claude-quota-monitor/blob/main/LICENSE"
+         target="_blank" rel="noopener" aria-label="MIT License">
+        <img src="https://img.shields.io/badge/License-MIT-a78bfa.svg"
+             alt="License: MIT" />
+      </a>
     </div>
   </section>
 </div>
@@ -688,35 +723,74 @@
           </a>
         </div>
 
-        <div class="carousel-item" data-label="English">
-          <img src="screenshots/store-en.png" alt="Claude Quota Monitor — English" loading="lazy"/>
+        <div class="carousel-item" data-label="English — Dark">
+          <img src="screenshots/store-en-dark.png" alt="Claude Quota Monitor — English (dark)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="Português (Brasil)">
-          <img src="screenshots/store-pt_BR.png" alt="Claude Quota Monitor — Português" loading="lazy"/>
+        <div class="carousel-item" data-label="English — Light">
+          <img src="screenshots/store-en-light.png" alt="Claude Quota Monitor — English (light)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="Español">
-          <img src="screenshots/store-es.png" alt="Claude Quota Monitor — Español" loading="lazy"/>
+
+        <div class="carousel-item" data-label="Português (Brasil) — Dark">
+          <img src="screenshots/store-pt_BR-dark.png" alt="Claude Quota Monitor — Português (dark)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="Français">
-          <img src="screenshots/store-fr.png" alt="Claude Quota Monitor — Français" loading="lazy"/>
+        <div class="carousel-item" data-label="Português (Brasil) — Light">
+          <img src="screenshots/store-pt_BR-light.png" alt="Claude Quota Monitor — Português (light)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="العربية">
-          <img src="screenshots/store-ar.png" alt="Claude Quota Monitor — Arabic" loading="lazy"/>
+
+        <div class="carousel-item" data-label="Español — Dark">
+          <img src="screenshots/store-es-dark.png" alt="Claude Quota Monitor — Español (dark)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="বাংলা">
-          <img src="screenshots/store-bn.png" alt="Claude Quota Monitor — Bengali" loading="lazy"/>
+        <div class="carousel-item" data-label="Español — Light">
+          <img src="screenshots/store-es-light.png" alt="Claude Quota Monitor — Español (light)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="हिन्दी">
-          <img src="screenshots/store-hi.png" alt="Claude Quota Monitor — Hindi" loading="lazy"/>
+
+        <div class="carousel-item" data-label="Français — Dark">
+          <img src="screenshots/store-fr-dark.png" alt="Claude Quota Monitor — Français (dark)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="Bahasa Indonesia">
-          <img src="screenshots/store-id.png" alt="Claude Quota Monitor — Indonesian" loading="lazy"/>
+        <div class="carousel-item" data-label="Français — Light">
+          <img src="screenshots/store-fr-light.png" alt="Claude Quota Monitor — Français (light)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="Русский">
-          <img src="screenshots/store-ru.png" alt="Claude Quota Monitor — Russian" loading="lazy"/>
+
+        <div class="carousel-item" data-label="العربية — Dark">
+          <img src="screenshots/store-ar-dark.png" alt="Claude Quota Monitor — Arabic (dark)" loading="lazy"/>
         </div>
-        <div class="carousel-item" data-label="中文（简体）">
-          <img src="screenshots/store-zh_CN.png" alt="Claude Quota Monitor — Chinese" loading="lazy"/>
+        <div class="carousel-item" data-label="العربية — Light">
+          <img src="screenshots/store-ar-light.png" alt="Claude Quota Monitor — Arabic (light)" loading="lazy"/>
+        </div>
+
+        <div class="carousel-item" data-label="বাংলা — Dark">
+          <img src="screenshots/store-bn-dark.png" alt="Claude Quota Monitor — Bengali (dark)" loading="lazy"/>
+        </div>
+        <div class="carousel-item" data-label="বাংলা — Light">
+          <img src="screenshots/store-bn-light.png" alt="Claude Quota Monitor — Bengali (light)" loading="lazy"/>
+        </div>
+
+        <div class="carousel-item" data-label="हिन्दी — Dark">
+          <img src="screenshots/store-hi-dark.png" alt="Claude Quota Monitor — Hindi (dark)" loading="lazy"/>
+        </div>
+        <div class="carousel-item" data-label="हिन्दी — Light">
+          <img src="screenshots/store-hi-light.png" alt="Claude Quota Monitor — Hindi (light)" loading="lazy"/>
+        </div>
+
+        <div class="carousel-item" data-label="Bahasa Indonesia — Dark">
+          <img src="screenshots/store-id-dark.png" alt="Claude Quota Monitor — Indonesian (dark)" loading="lazy"/>
+        </div>
+        <div class="carousel-item" data-label="Bahasa Indonesia — Light">
+          <img src="screenshots/store-id-light.png" alt="Claude Quota Monitor — Indonesian (light)" loading="lazy"/>
+        </div>
+
+        <div class="carousel-item" data-label="Русский — Dark">
+          <img src="screenshots/store-ru-dark.png" alt="Claude Quota Monitor — Russian (dark)" loading="lazy"/>
+        </div>
+        <div class="carousel-item" data-label="Русский — Light">
+          <img src="screenshots/store-ru-light.png" alt="Claude Quota Monitor — Russian (light)" loading="lazy"/>
+        </div>
+
+        <div class="carousel-item" data-label="中文（简体）— Dark">
+          <img src="screenshots/store-zh_CN-dark.png" alt="Claude Quota Monitor — Chinese (dark)" loading="lazy"/>
+        </div>
+        <div class="carousel-item" data-label="中文（简体）— Light">
+          <img src="screenshots/store-zh_CN-light.png" alt="Claude Quota Monitor — Chinese (light)" loading="lazy"/>
         </div>
 
       </div>
@@ -767,7 +841,6 @@
     <a href="https://x.com/claudequota" target="_blank" rel="noopener">X (Twitter)</a>
     <a href="https://ko-fi.com/claudequotamonitor" target="_blank" data-i18n="footer_kofi_link">♥ Support on Ko-fi</a>
     <a href="https://claudequotamonitor.github.io/privacy-policy.html" target="_blank" data-i18n="footer_privacy">Privacy Policy</a>
-    <a href="https://claudequotamonitor.github.io/changelog.html" target="_blank" data-i18n="footer_changelog">Changelog</a>
   </div>
   <p class="footer-copy" data-i18n="footer_copy">© 2026 The Claude Quota Monitor team · Not affiliated with Anthropic</p>
   <p class="footer-copy" data-i18n-html="footer_email_html">Questions or feedback? <a href="mailto:claudequotamonitor@gmail.com" style="color:var(--muted); text-decoration:underline; text-underline-offset:3px;">claudequotamonitor@gmail.com</a></p>
