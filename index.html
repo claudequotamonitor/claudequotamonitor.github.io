@@ -47,7 +47,7 @@
       "priceCurrency": "USD"
     },
     "downloadUrl": "https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm",
-    "softwareVersion": "1.5",
+    "softwareVersion": "1.7",
     "license": "https://github.com/claudequotamonitor/claude-quota-monitor/blob/main/LICENSE",
     "sameAs": [
       "https://github.com/claudequotamonitor/claude-quota-monitor",
@@ -216,7 +216,33 @@
       font-size: 18px;
       color: var(--muted);
       max-width: 520px;
-      margin: 0 auto 36px;
+      margin: 0 auto 22px;
+    }
+
+    .version-callout {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #f4f0ff;
+      background: rgba(167,139,250,.11);
+      border: 1px solid rgba(167,139,250,.28);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 30px;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+
+    .version-callout:hover {
+      background: rgba(167,139,250,.16);
+      border-color: rgba(167,139,250,.46);
+      transform: translateY(-1px);
+    }
+
+    .version-callout-arrow {
+      color: var(--purple);
     }
 
     .hero-ctas {
@@ -577,6 +603,13 @@
     </div>
     <h1 data-i18n-html="hero_title_html">Know your <em>Claude quota</em><br/>before it runs out</h1>
     <p data-i18n-html="hero_desc_html">Track your Claude.ai session and weekly usage directly in the browser toolbar — no setup, no distractions. Free and <a href="https://github.com/claudequotamonitor/claude-quota-monitor" target="_blank" style="color:var(--purple);text-decoration:underline;text-underline-offset:3px;">open source</a>.</p>
+    <a class="version-callout"
+       href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm"
+       target="_blank"
+       rel="noopener">
+      <span data-i18n="version_notice">Version 1.7 available</span>
+      <span class="version-callout-arrow" aria-hidden="true">&rarr;</span>
+    </a>
     <div class="hero-ctas">
       <a class="btn-primary"
          href="https://chromewebstore.google.com/detail/claude-quota-monitor/gpeogkjjkpmdjgggeaegmnmlmikgkjjm"
